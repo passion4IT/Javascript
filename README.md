@@ -7,3 +7,8 @@ of this.
 - React
 - CSS3
 - HTML
+
+Few commands/scripts to execute the application:
+npm start: start react application
+npm build: build jsx files to respective js files
+npm eject: eject react application
