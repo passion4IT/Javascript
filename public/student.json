@@ -1,0 +1,102 @@
+{
+  "students": [
+    {
+    "name": "John Fred",
+    "cls": "IV",
+    "section": "C",
+    "grade": "A",
+    "tutor": "Mrs. Richa"
+  },
+  {
+    "name": "Ravi Chadda",
+    "cls": "VI",
+    "section": "E",
+    "grade": "B+",
+    "tutor": "Mr Srinivasan"
+  },{
+    "name": "Fried Syes",
+    "cls": "X",
+    "section": "B",
+    "grade": "A+",
+    "tutor": "Ms. Samjhana"
+  },{
+    "name": "John Syes",
+    "cls": "IV",
+    "section": "B",
+    "grade": "A",
+    "tutor": "Mrs. Lagoo"
+  },{
+    "name": "Sreenu Fred",
+    "cls": "IV",
+    "section": "A",
+    "grade": "A+",
+    "tutor": "Mr Daya Kishor"
+  },{
+    "name": "Jesse Jais",
+    "cls": "III",
+    "section": "A",
+    "grade": "B",
+    "tutor": "Mrs. Grima"
+  },{
+    "name": "Naveen Srivastav",
+    "cls": "II",
+    "section": "A",
+    "grade": "A-",
+    "tutor": "Mr Kishor Pandit"
+  },{
+    "name": "Pappu bhago",
+    "cls": "IV",
+    "section": "C",
+    "grade": "A+",
+    "tutor": "Mr Ganesh"
+  },{
+    "name": "Jerry Bishwas",
+    "cls": "II",
+    "section": "A",
+    "grade": "C",
+    "tutor": "Ms Laxmi"
+  },{
+    "name": "Gawaskar Raut",
+    "cls": "III",
+    "section": "D",
+    "grade": "B",
+    "tutor": "Mr. Ram lal"
+  },{
+    "name": "Grish Naveen",
+    "cls": "V",
+    "section": "C",
+    "grade": "A+",
+    "tutor": "Mr. Pallavi"
+  },{
+    "name": "Navneet nisha",
+    "cls": "X",
+    "section": "A",
+    "grade": "A+",
+    "tutor": "Mr Jayram"
+  },{
+    "name": "Nisha Bhagat",
+    "cls": "I",
+    "section": "A",
+    "grade": "A+",
+    "tutor": "Mrs. Richa"
+  },{
+    "name": "Gyan dev",
+    "cls": "IV",
+    "section": "C",
+    "grade": "A+",
+    "tutor": "Mrs. Richa"
+  },{
+    "name": "John Fish",
+    "cls": "IV",
+    "section": "B",
+    "grade": "A",
+    "tutor": "Mr Ram sagar"
+  },{
+    "name": "Jashpal Singh",
+    "cls": "IV",
+    "section": "B",
+    "grade": "C",
+    "tutor": "Mr Dev Singh"
+  }
+  ]
+}

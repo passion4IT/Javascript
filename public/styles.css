@@ -1,0 +1,35 @@
+/*
+  Author: Amit Thakur
+  Type: Css
+  Purpose: Practice Project
+ */
+
+.body-container {
+    min-height: 500px;
+}
+
+.body-container h3 {
+    background: #c7d4c4;
+    color: blue;
+    padding-top: 10px ;
+    border: 3px solid gray;
+    border-bottom: none;
+}
+
+.body-container .student-info, .table-header {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.body-container .student-info:nth-child(odd) {
+    background-color: #edf1ee;
+}
+
+.add-student {
+    margin: 5px 0;
+}
+
+form {
+    padding: 10px;
+    background: #eaf1e6;
+}
