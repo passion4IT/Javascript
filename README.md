@@ -9,7 +9,7 @@ of this.
 - HTML
 
 **Few commands/scripts to execute the application:<br>
-*npm install: install npm dependencies <br>
-*npm start: start react application<br>
-*npm build: build jsx files to respective js files<br>
-*npm eject: eject react application<br>
+npm install: install npm dependencies <br>
+npm start: start react application<br>
+npm build: build jsx files to respective js files<br>
+npm eject: eject react application<br>
