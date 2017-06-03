@@ -5,6 +5,8 @@ of this.
 **This has been developed using following libraries/framework:**
 - Boostrap
 - React
+- Redux
+- Redux-thunk
 - CSS3
 - HTML
 
