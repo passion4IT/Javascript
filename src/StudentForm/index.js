@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 class StudentForm extends Component{
     constructor(props) {
@@ -9,13 +10,6 @@ class StudentForm extends Component{
         this.updateGrade = this.updateGrade.bind(this)
         this.updateTutor = this.updateTutor.bind(this)
         this.state = {
-            student: {
-                name: '',
-                cls: '',
-                section: '',
-                grade: '',
-                tutor: ''
-            },
             error: {
                 nameError: '',
                 classError: '',
@@ -30,35 +24,35 @@ class StudentForm extends Component{
     }
 
     updateName(e) {
-        let student = this.state.student
+        let student = this.props.student
         student.name = e.target.value
         this.setState({student: student})
         this.updateErrorState('nameError')
     }
 
     updateClass(e) {
-        let student = this.state.student
+        let student = this.props.student
         student.cls = e.target.value
         this.setState({student: student})
         this.updateErrorState('classError')
     }
 
     updateSection(e) {
-        let student = this.state.student
+        let student = this.props.student
         student.section = e.target.value
         this.setState({student: student})
         this.updateErrorState('sectionError')
     }
 
     updateGrade(e) {
-        let student = this.state.student
+        let student = this.props.student
         student.grade = e.target.value
         this.setState({student: student})
         this.updateErrorState('gradeError')
     }
 
     updateTutor(e) {
-        let student = this.state.student
+        let student = this.props.student
         student.tutor = e.target.value
         this.setState({student: student})
         this.updateErrorState('tutorError')
@@ -75,7 +69,7 @@ class StudentForm extends Component{
     }
 
     validateForm() {
-        const student = this.state.student
+        const student = this.props.student
         let error = this.state.error
         if(student['name'] === '') {
             error.nameError = 'Name of student is required'
@@ -128,27 +122,27 @@ class StudentForm extends Component{
                 <div className="row" >
                     <div className="col-xs-12 form-group">
                         <label htmlFor="name">Name of student </label>
-                        <input type="text" className="form-control" value={this.state.student.name} onChange={e => this.updateName(e)} />
+                        <input type="text" className="form-control" value={this.props.student.name} onChange={e => this.updateName(e)} />
                         <p className="text-danger">{this.state.error.nameError}</p>
                     </div>
                     <div className="col-xs-12 form-group">
                         <label htmlFor="studentClass">Class </label>
-                        <input type="text" className="form-control" value={this.state.student.cls} onChange={e => this.updateClass(e)} />
+                        <input type="text" className="form-control" value={this.props.student.cls} onChange={e => this.updateClass(e)} />
                         <p className="text-danger">{this.state.error.classError}</p>
                     </div>
                     <div className="col-xs-12 form-group">
                         <label htmlFor="section">Section</label>
-                        <input type="text" className="form-control" value={this.state.student.section} onChange={e => this.updateSection(e)} />
+                        <input type="text" className="form-control" value={this.props.student.section} onChange={e => this.updateSection(e)} />
                         <p className="text-danger">{this.state.error.sectionError}</p>
                     </div>
                     <div className="col-xs-12 form-group">
                         <label htmlFor="grade">Grade</label>
-                        <input type="text" className="form-control" value={this.state.student.grade} onChange={e => this.updateGrade(e)} />
+                        <input type="text" className="form-control" value={this.props.student.grade} onChange={e => this.updateGrade(e)} />
                         <p className="text-danger">{this.state.error.gradeError}</p>
                     </div>
                     <div className="col-xs-12 form-group">
                         <label htmlFor="tutor">Tutor</label>
-                        <input type="text" className="form-control" value={this.state.student.tutor} onChange={e => this.updateTutor(e)} />
+                        <input type="text" className="form-control" value={this.props.student.tutor} onChange={e => this.updateTutor(e)} />
                         <p className="text-danger">{this.state.error.tutorError}</p>
                     </div>
                     <div className="col-xs-12 form-group">
@@ -167,4 +161,8 @@ class StudentForm extends Component{
     }
 }
 
-export default StudentForm
+function mapStateToProps(state) {
+    return state.studentReducer
+}
+
+export default connect(mapStateToProps)(StudentForm)

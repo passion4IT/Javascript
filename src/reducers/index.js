@@ -4,6 +4,13 @@ import * as acts from '../actions/index';
 const defaultState = {
     requestData: false,
     students: {},
+    student: {
+        name: '',
+        cls: '',
+        section: '',
+        grade: '',
+        tutor: ''
+    },
 }
 
 function studentReducer(state = defaultState, action) {
