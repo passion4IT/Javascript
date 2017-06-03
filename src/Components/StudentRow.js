@@ -1,8 +1,8 @@
 import React from 'react'
 
-const StudentRow = ({name, classOfStudent, section, grade, }) => (
+const StudentRow = ({name, classOfStudent, section, grade, studentId, userProfile}) => (
     <div className="row student-info">
-        <div className="col-xs-6 col-sm-3 text-info">
+        <div className="col-xs-6 col-sm-3 text-info" data-id={studentId} onClick={e => userProfile(e)}>
             {name}
         </div>
         <div className="col-xs-6 col-sm-3 text-center">

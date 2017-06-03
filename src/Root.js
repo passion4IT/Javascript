@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom'
 import App from './App'
 import UsersList from './Components/UsersList'
-import StudentProfile from './StudentProfile'
+import StudentForm from './StudentForm/index'
 
 class Root extends Component {
     render() {
@@ -15,7 +15,7 @@ class Root extends Component {
                 <div>
                     <Route path="" component={App} />
                     <Route path="/students" component={UsersList} />
-                    <Route path="/student/new" component={StudentProfile} />
+                    <Route path="/student/new" component={StudentForm} />
                     <Redirect from="" exact to="/students" />
                 </div>
             </Router>

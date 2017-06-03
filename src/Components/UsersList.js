@@ -6,9 +6,19 @@ import TableHeader from './TableHeader'
 import { getStudents } from '../actions/index'
 
 class UsersList extends Component {
+    constructor(props) {
+        super(props)
+        this.userProfile = this.userProfile.bind(this)
+    }
+
     componentDidMount() {
         const dispatch = this.props.dispatch
         dispatch(getStudents())
+    }
+
+    userProfile(e) {
+        const studentId = e.target.getAttribute('data-id')
+        console.log(this.props.students[studentId])
     }
 
     render() {
@@ -21,10 +31,12 @@ class UsersList extends Component {
                 Object.keys(students).map(student => (
                     <StudentRow
                         name={students[student].name}
+                        studentId={student}
                         classOfStudent={students[student].cls}
                         section={students[student].section}
                         grade={students[student].grade}
                         key={student}
+                        userProfile = {this.userProfile}
                     />
                 ))
                 }
