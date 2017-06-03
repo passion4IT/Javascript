@@ -24,6 +24,10 @@ function studentReducer(state = defaultState, action) {
                 requestData: false,
                 students: action.json,
             })
+        case acts.UPDATE_STUDENT:
+            return Object.assign({}, state, {
+                student: action.student,
+            })
         default:
             return state
     }

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import ProcessingRequest from './Processing'
 import StudentRow from './StudentRow'
 import TableHeader from './TableHeader'
-import { getStudents } from '../actions/index'
+import { getStudents, updateStudent } from '../actions/index'
 
 class UsersList extends Component {
     constructor(props) {
@@ -18,6 +18,10 @@ class UsersList extends Component {
 
     userProfile(e) {
         const studentId = e.target.getAttribute('data-id')
+        const students = this.props.students
+        const dispatch = this.props.dispatch
+        dispatch(updateStudent(students[studentId]))
+        this.props.history.push(`/student/${studentId}`)
     }
 
     render() {

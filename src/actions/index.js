@@ -2,6 +2,7 @@ import fetch from 'isomorphic-fetch';
 
 export const REQUESTING_DATA = 'REQUESTING_DATA'
 export const RECEIVED_DATA = 'RECEIVED_DATA'
+export const UPDATE_STUDENT = 'UPDATE_STUDENT'
 
 function requestStudents() {
     return {
@@ -13,6 +14,13 @@ function receivedStudents(json) {
     return {
         type: RECEIVED_DATA,
         json,
+    }
+}
+
+export function updateStudent(student) {
+    return {
+        type: UPDATE_STUDENT,
+        student,
     }
 }
 

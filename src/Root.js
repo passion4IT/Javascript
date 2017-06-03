@@ -7,7 +7,7 @@ import {
 import App from './Containers/App'
 import UsersList from './Components/UsersList'
 import StudentForm from './StudentForm/index'
-
+import StudentProfile from './Containers/StudentProfile'
 class Root extends Component {
     render() {
         return (
@@ -16,6 +16,7 @@ class Root extends Component {
                     <Route path="" component={App} />
                     <Route path="/students" component={UsersList} />
                     <Route path="/student/new" component={StudentForm} />
+                    <Route path="/student/:id" component={StudentProfile} />
                     <Redirect from="" exact to="/students" />
                 </div>
             </Router>
