@@ -1,4 +1,4 @@
-import fetch from 'fetch';
+import fetch from 'isomorphic-fetch';
 
 export const REQUESTING_DATA = 'REQUESTING_DATA'
 export const RECEIVED_DATA = 'RECEIVED_DATA'
@@ -16,12 +16,15 @@ function receivedStudents(json) {
     }
 }
 
-export default function getStudents() {
+export function getStudents() {
     return function(dispatch) {
         dispatch(requestStudents())
-        return fetch.get('http://localhost:3000/student.json')
+        return fetch('http://localhost:3000/student.json')
+            .then(function(response) {
+                return response.json()
+            })
             .then(function(json) {
-            dispatch(receivedStudents(json))
+            dispatch(receivedStudents(json.students))
         })
     }
 }

@@ -1,39 +1,23 @@
 import React, { Component } from 'react'
-import $ from 'jquery'
+import { connect } from 'react-redux'
 import ProcessingRequest from './Processing'
 import StudentRow from './StudentRow'
 import TableHeader from './TableHeader'
+import { getStudents } from '../actions/index'
 
 class UsersList extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            list: {},
-        }
-        this.getStudentData = this.getStudentData.bind(this)
-    }
-
-    getStudentData() {
-        $.get({
-            url: 'http://localhost:3000/student.json',
-            method: 'GET'
-        })
-            .done((response) => {
-                this.setState({list: response.students})
-            })
-    }
-
     componentDidMount() {
-        this.getStudentData()
+        const dispatch = this.props.dispatch
+        dispatch(getStudents())
     }
 
     render() {
-        const students = this.state.list
+        const {students, requestData } = this.props
         return (
             <div className="studentList">
                 <TableHeader />
-                {!students && <ProcessingRequest/>}
-                {students &&
+                {requestData && <ProcessingRequest/>}
+                {!requestData &&
                 Object.keys(students).map(student => (
                     <StudentRow
                         name={students[student].name}
@@ -49,4 +33,8 @@ class UsersList extends Component {
     }
 }
 
-export default UsersList
+function mapStateToProps(state) {
+    return state.studentReducer
+}
+
+export default connect(mapStateToProps)(UsersList)
