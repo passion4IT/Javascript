@@ -10,8 +10,8 @@ class App extends Component {
                 Student
             </Link>
 
-            <Link className="text-info pull-right" to='/students'>
-                Show Users
+            <Link className="text-info pull-right text-center student-link" to='/students'>
+                <i className="fa fa-users" aria-hidden="true"></i>
             </Link>
         </div>
     )

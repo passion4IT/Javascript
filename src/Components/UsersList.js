@@ -18,7 +18,6 @@ class UsersList extends Component {
 
     userProfile(e) {
         const studentId = e.target.getAttribute('data-id')
-        console.log(this.props.students[studentId])
     }
 
     render() {

@@ -29,6 +29,16 @@
     margin: 5px 0;
 }
 
+.student-link {
+    background: #5cb85c;
+    color: white;
+    padding: 2px 42px;
+    font-size: 22px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
 form {
     padding: 10px;
     background: #eaf1e6;
