@@ -17,6 +17,7 @@ class StudentForm extends Component{
                 tutor: ''
             }
         }
+        this.browseBack = this.browseBack.bind(this)
     }
 
     updateName(e) {
@@ -49,6 +50,10 @@ class StudentForm extends Component{
         this.setState({student: student})
     }
 
+    browseBack() {
+        this.props.history.push('/students')
+    }
+
     render() {
         return (
             <form>
@@ -74,6 +79,10 @@ class StudentForm extends Component{
                         <input type="text" className="form-control" value={this.state.student.tutor} onChange={e => this.updateTutor(e)} />
                     </div>
                     <div className="col-xs-12 form-group">
+                        <button className="btn btn-success" onClick={this.browseBack}>
+                            <i className="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;
+                            Back
+                        </button>
                         <button className="btn btn-success pull-right">
                             Submit &nbsp;
                             <span className="glyphicon glyphicon-ok"></span>
