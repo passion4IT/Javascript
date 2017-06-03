@@ -4,7 +4,7 @@ import {
     Route,
     Redirect
 } from 'react-router-dom'
-import App from './App'
+import App from './Containers/App'
 import UsersList from './Components/UsersList'
 import StudentForm from './StudentForm/index'
 
