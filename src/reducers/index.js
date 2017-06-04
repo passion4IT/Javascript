@@ -28,6 +28,10 @@ function studentReducer(state = defaultState, action) {
             return Object.assign({}, state, {
                 student: action.student,
             })
+        case acts.RESET_FORM:
+            return Object.assign({}, state, {
+                student: defaultState.student,
+            })
         default:
             return state
     }

@@ -109,7 +109,12 @@ class StudentForm extends Component{
     addUser() {
         this.validateForm()
         if(this.validateForm() === true) {
-            console.log(this.state.student)
+            if(window.location.href.indexOf('new') > -1) {
+                console.log('user created')
+            }
+            else {
+                console.log('user edited')
+            }
         }
         else {
             return

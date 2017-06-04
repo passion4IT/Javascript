@@ -15,8 +15,8 @@ class Root extends Component {
                 <div>
                     <Route path="" component={App} />
                     <Route path="/students" component={UsersList} />
-                    <Route path="/student/new" component={StudentForm} />
                     <Route path="/student/:id" component={StudentProfile} />
+                    <Route path="/new/student" component={StudentForm} />
                     <Redirect from="" exact to="/students" />
                 </div>
             </Router>
