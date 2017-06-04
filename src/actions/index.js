@@ -4,6 +4,7 @@ export const REQUESTING_DATA = 'REQUESTING_DATA'
 export const RECEIVED_DATA = 'RECEIVED_DATA'
 export const UPDATE_STUDENT = 'UPDATE_STUDENT'
 export const RESET_FORM = 'RESET_FORM'
+export const ADD_NEW_STUDENT = 'ADD_NEW_STUDENT'
 
 function requestStudents() {
     return {
@@ -28,6 +29,14 @@ export function updateStudent(student) {
 export function resetForm() {
     return {
         type: RESET_FORM,
+    }
+}
+
+export function addNewStudent(student, oldStudents) {
+    return {
+        type: ADD_NEW_STUDENT,
+        student,
+        oldStudents,
     }
 }
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { addNewStudent } from '../actions/index'
 
 class StudentForm extends Component{
     constructor(props) {
@@ -110,7 +111,9 @@ class StudentForm extends Component{
         this.validateForm()
         if(this.validateForm() === true) {
             if(window.location.href.indexOf('new') > -1) {
-                console.log('user created')
+                const dispatch = this.props.dispatch
+                dispatch(addNewStudent(this.props.student, this.props.students))
+                this.props.history.push('/students')
             }
             else {
                 console.log('user edited')

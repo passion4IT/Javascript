@@ -13,6 +13,12 @@ const defaultState = {
     },
 }
 
+function addStudent(student, oldStudents) {
+    let students = oldStudents
+    students.push(student)
+    return students
+}
+
 function studentReducer(state = defaultState, action) {
     switch(action.type) {
         case acts.REQUESTING_DATA:
@@ -32,6 +38,10 @@ function studentReducer(state = defaultState, action) {
             return Object.assign({}, state, {
                 student: defaultState.student,
             })
+        case acts.ADD_NEW_STUDENT:
+            return Object.assign({}, state, {
+               students: addStudent(action.student, action.oldStudents)
+        })
         default:
             return state
     }

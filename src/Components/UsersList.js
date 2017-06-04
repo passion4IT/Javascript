@@ -3,17 +3,12 @@ import { connect } from 'react-redux'
 import ProcessingRequest from './Processing'
 import StudentRow from './StudentRow'
 import TableHeader from './TableHeader'
-import { getStudents, updateStudent } from '../actions/index'
+import { updateStudent } from '../actions/index'
 
 class UsersList extends Component {
     constructor(props) {
         super(props)
         this.userProfile = this.userProfile.bind(this)
-    }
-
-    componentDidMount() {
-        const dispatch = this.props.dispatch
-        dispatch(getStudents())
     }
 
     userProfile(e) {

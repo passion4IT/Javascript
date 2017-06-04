@@ -1,12 +1,17 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { resetForm } from '../actions/index'
+import { getStudents, resetForm } from '../actions/index'
 
 class App extends Component {
     constructor(props) {
         super(props)
         this.addUser = this.addUser.bind(this)
+    }
+
+    componentDidMount() {
+        const dispatch = this.props.dispatch
+        dispatch(getStudents())
     }
 
     addUser() {
