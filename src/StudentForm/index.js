@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addNewStudent } from '../actions/index'
+import { addNewStudent, resetForm } from '../actions/index'
 
 class StudentForm extends Component{
     constructor(props) {
@@ -113,6 +113,7 @@ class StudentForm extends Component{
             if(window.location.href.indexOf('new') > -1) {
                 const dispatch = this.props.dispatch
                 dispatch(addNewStudent(this.props.student, this.props.students))
+                dispatch(resetForm())
                 this.props.history.push('/students')
             }
             else {
